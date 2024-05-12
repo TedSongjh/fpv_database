@@ -1,0 +1,330 @@
+defaults nosave
+
+###WARNING: NO CUSTOM DEFAULTS FOUND###
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
+###ERROR IN diff: NO CONFIG FOUND###
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name HAKRC F722D
+manufacturer_id HAKRC
+mcu_id 002e003b3232511838393431
+signature 
+
+# resources
+resource BEEPER 1 C13
+resource MOTOR 1 B04
+resource MOTOR 2 B05
+resource MOTOR 3 B00
+resource MOTOR 4 B01
+resource MOTOR 5 A15
+resource MOTOR 6 B03
+resource MOTOR 7 B06
+resource MOTOR 8 B07
+resource PPM 1 A03
+resource PWM 1 A02
+resource PWM 2 A01
+resource PWM 3 A00
+resource SERIAL_TX 1 A09
+resource SERIAL_TX 2 A02
+resource SERIAL_TX 3 B10
+resource SERIAL_TX 4 A00
+resource SERIAL_TX 6 C06
+resource SERIAL_RX 1 A10
+resource SERIAL_RX 2 A03
+resource SERIAL_RX 3 B11
+resource SERIAL_RX 4 A01
+resource SERIAL_RX 6 C07
+resource I2C_SCL 1 B08
+resource I2C_SDA 1 B09
+resource LED 1 A13
+resource LED 2 A14
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_SCK 3 C10
+resource SPI_MISO 1 A06
+resource SPI_MISO 2 B14
+resource SPI_MISO 3 C11
+resource SPI_MOSI 1 A07
+resource SPI_MOSI 2 B15
+resource SPI_MOSI 3 C12
+resource ADC_BATT 1 C02
+resource ADC_RSSI 1 C00
+resource ADC_CURR 1 C01
+resource ADC_EXT 1 A04
+resource SDCARD_CS 1 D02
+resource PINIO 1 A08
+resource PINIO 2 C09
+resource FLASH_CS 1 D02
+resource OSD_CS 1 B12
+resource GYRO_EXTI 1 C04
+resource GYRO_EXTI 2 C03
+resource GYRO_CS 1 B02
+resource GYRO_CS 2 C15
+resource USB_DETECT 1 C14
+
+# timer
+timer B04 AF2
+# pin B04: TIM3 CH1 (AF2)
+timer B05 AF2
+# pin B05: TIM3 CH2 (AF2)
+timer B00 AF2
+# pin B00: TIM3 CH3 (AF2)
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
+timer A15 AF1
+# pin A15: TIM2 CH1 (AF1)
+timer B03 AF1
+# pin B03: TIM2 CH2 (AF1)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+timer A08 AF1
+# pin A08: TIM1 CH1 (AF1)
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
+timer A02 AF3
+# pin A02: TIM9 CH1 (AF3)
+timer A01 AF2
+# pin A01: TIM5 CH2 (AF2)
+timer A00 AF2
+# pin A00: TIM5 CH1 (AF2)
+timer B10 AF1
+# pin B10: TIM2 CH3 (AF1)
+timer C06 AF2
+# pin C06: TIM3 CH1 (AF2)
+timer C07 AF2
+# pin C07: TIM3 CH2 (AF2)
+timer B08 AF2
+# pin B08: TIM4 CH3 (AF2)
+timer B09 AF3
+# pin B09: TIM11 CH1 (AF3)
+timer C09 AF3
+# pin C09: TIM8 CH4 (AF3)
+
+# dma
+dma SPI_MOSI 3 0
+# SPI_MOSI 3: DMA1 Stream 5 Channel 0
+dma SPI_TX 3 0
+# SPI_TX 3: DMA1 Stream 5 Channel 0
+dma ADC 1 0
+# ADC 1: DMA2 Stream 0 Channel 0
+dma pin B04 0
+# pin B04: DMA1 Stream 4 Channel 5
+dma pin B05 0
+# pin B05: DMA1 Stream 5 Channel 5
+dma pin B00 0
+# pin B00: DMA1 Stream 7 Channel 5
+dma pin B01 0
+# pin B01: DMA1 Stream 2 Channel 5
+dma pin A15 0
+# pin A15: DMA1 Stream 5 Channel 3
+dma pin B03 0
+# pin B03: DMA1 Stream 6 Channel 3
+dma pin B06 0
+# pin B06: DMA1 Stream 0 Channel 2
+dma pin B07 0
+# pin B07: DMA1 Stream 3 Channel 2
+dma pin A08 2
+# pin A08: DMA2 Stream 3 Channel 6
+dma pin A01 0
+# pin A01: DMA1 Stream 4 Channel 6
+dma pin A00 0
+# pin A00: DMA1 Stream 2 Channel 6
+dma pin B10 0
+# pin B10: DMA1 Stream 1 Channel 3
+dma pin C06 0
+# pin C06: DMA1 Stream 4 Channel 5
+dma pin C07 0
+# pin C07: DMA1 Stream 5 Channel 5
+dma pin B08 0
+# pin B08: DMA1 Stream 7 Channel 2
+dma pin C09 0
+# pin C09: DMA2 Stream 7 Channel 7
+
+# feature
+feature -RX_PARALLEL_PWM
+feature RX_SERIAL
+feature GPS
+feature LED_STRIP
+feature OSD
+
+# serial
+serial 2 2 115200 57600 0 115200
+serial 3 64 115200 57600 0 115200
+serial 5 1 115200 57600 0 115200
+
+# beeper
+beeper -ARMED
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# led
+led 0 12,12::C:1
+led 1 13,12::C:1
+led 2 14,12::C:1
+led 3 15,12::C:1
+led 4 12,13::C:1
+led 5 13,13::C:1
+led 6 14,13::C:1
+led 7 15,13::C:1
+led 8 12,14::C:1
+led 9 13,14::C:1
+led 10 14,14::C:1
+led 11 15,14::C:1
+led 12 12,15::C:1
+led 13 13,15::C:1
+led 14 14,15::C:1
+led 15 15,15::C:1
+
+# aux
+aux 0 0 1 1800 2100 0 0
+aux 1 1 2 1700 2100 0 0
+aux 2 46 2 900 1300 0 0
+aux 3 13 0 1700 2100 0 0
+aux 4 36 0 1875 2100 0 0
+aux 5 40 255 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BAND_A   A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BAND_B   B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BAND_E   E FACTORY 5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 0 1 2 3
+vtxtable powerlabels 25 100 200 MAX
+
+# rxfail
+rxfail 3 s 875
+
+# master
+set gyro_notch1_hz = 150
+set gyro_notch1_cutoff = 100
+set dyn_notch_q = 120
+set acc_calibration = -27,8,-53,1
+set mag_bustype = I2C
+set mag_i2c_device = 1
+set mag_hardware = NONE
+set baro_bustype = I2C
+set baro_i2c_device = 1
+set baro_hardware = NONE
+set rssi_channel = 12
+set serialrx_provider = CRSF
+set blackbox_sample_rate = 1/8
+set blackbox_device = SPIFLASH
+set dshot_idle_value = 500
+set motor_pwm_protocol = DSHOT600
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+set failsafe_delay = 4
+set failsafe_procedure = GPS-RESCUE
+set failsafe_recovery_delay = 20
+set align_board_roll = 180
+set current_meter = ADC
+set battery_meter = ADC
+set ibata_scale = 210
+set beeper_inversion = ON
+set beeper_od = OFF
+set beeper_dshot_beacon_tone = 3
+set small_angle = 180
+set gps_provider = UBLOX
+set gps_auto_baud = ON
+set gps_rescue_allow_arming_without_fix = ON
+set frsky_unit = IMPERIAL
+set sdcard_mode = SPI
+set sdcard_spi_bus = 3
+set osd_vbat_pos = 323
+set osd_rssi_pos = 2532
+set osd_tim_1_pos = 340
+set osd_tim_2_pos = 2537
+set osd_current_pos = 290
+set osd_gps_sats_pos = 2404
+set osd_home_dir_pos = 2445
+set osd_home_dist_pos = 2446
+set osd_avg_cell_voltage_pos = 2544
+set osd_displayport_device = MSP
+set debug_mode = PIDLOOP
+set vtx_band = 3
+set vtx_channel = 3
+set vtx_power = 3
+set vtx_freq = 5665
+set max7456_spi_bus = 2
+set displayport_msp_serial = 5
+set pinio_config = 1,129,129,129
+set pinio_box = 40,255,255,255
+set flash_spi_bus = 3
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 1
+set gyro_1_sensor_align = CW90
+set gyro_1_align_yaw = 900
+set gyro_2_spibus = 1
+set gyro_2_sensor_align = CW90
+set gyro_2_align_yaw = 900
+
+profile 0
+
+# profile 0
+set iterm_windup = 100
+set yaw_lowpass_hz = 0
+set p_pitch = 59
+set i_pitch = 106
+set d_pitch = 68
+set f_pitch = 143
+set p_roll = 49
+set i_roll = 88
+set d_roll = 46
+set p_yaw = 49
+set i_yaw = 88
+set d_min_roll = 37
+set d_min_pitch = 55
+set simplified_d_gain = 125
+set simplified_pi_gain = 110
+set simplified_dmax_gain = 70
+set simplified_pitch_d_gain = 130
+set simplified_pitch_pi_gain = 115
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rates_type = BETAFLIGHT
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
+set roll_expo = 5
+set pitch_expo = 5
+set yaw_expo = 5
+set roll_srate = 70
+set pitch_srate = 70
+set yaw_srate = 70
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
